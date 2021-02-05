@@ -1,6 +1,6 @@
 from gpiozero import LED # initalizing GPIO pins 
 green = LED(14) #setting green LED in pin 14
-red = LED(15) #setting red LED in pin 15
+orange = LED(15) #setting orange LED in pin 15
 
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input # for preprocessing input
 from tensorflow.keras.preprocessing.image import img_to_array #for converting image file to aray
@@ -118,38 +118,36 @@ while True:
 		# unpack the bounding box and predictions
 		(startX, startY, endX, endY) = box
 		(mask, withoutMask) = pred
-
 		# determine the class label and color we'll use to draw
 		# the bounding box and text
 		if mask > withoutMask:
 			label = ""
 			color = (0, 0, 0)
 			green.on()
-			red.off()
+			orange.off()
 			door.unlock()
 			time.sleep(5)
 			door.lock()
+			green.off()
 		else:
 			label = ""
 			color = (0, 0, 0)
 			green.off()
-			red.on()
-			
+			orange.on()
 		
 		# display the label and bounding box rectangle on the output
 		# frame
 		cv2.putText(videoFrame, label, (startX-50, startY - 10),
 			cv2.FONT_HERSHEY_SIMPLEX, 0.7, color, 2)
 		cv2.rectangle(videoFrame, (startX, startY), (endX, endY), color, 2)
-
 	# show the output frame
 	cv2.imshow("Face Mask Detector", videoFrame)
 	key = cv2.waitKey(1) & 0xFF
-	
 	# if the `s` key was pressed, break from the loop
 	if key == ord("s"):
-		break
+            green.off()
+            orange.off()
+            break
 
-# do a bit of cleanup
 cv2.destroyAllWindows()
 vs.stop()

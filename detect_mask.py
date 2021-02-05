@@ -1,6 +1,6 @@
 from gpiozero import LED # initalizing GPIO pins 
 green = LED(14) #setting green LED in pin 14
-red = LED(15) #setting red LED in pin 15
+orange = LED(15) #setting orange LED in pin 15
 
 # import the necessary packages
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input # for preprocessing input
@@ -124,20 +124,14 @@ while True:
 		if mask > withoutMask:
 			label = "Mask Detected."
 			color = (0, 255, 0)
-			red.off()
+			orange.off()
 			green.on()
 
 		else:
 			label = "Mask Not Detected."
 			color = (0, 0, 255)
 			green.off()
-			red.on()
-		
-		#label = "Thank you" if mask > withoutMask else "Please wear your face mask"
-		#color = (0, 255, 0) if label == "Thank you" else (0, 0, 255)
-
-		# include the probability in the label
-		#label = "{}: {:.2f}%".format(label, max(mask, withoutMask) * 100)
+			orange.on()
 
 		# display the label and bounding box rectangle on the output
 		# frame
@@ -151,7 +145,9 @@ while True:
 
 	# if the `s` key was pressed, break from the loop
 	if key == ord("s"):
-		break
+            green.off()
+            orange.off()
+            break
 
 # do a bit of cleanup
 cv2.destroyAllWindows()
