@@ -1,3 +1,6 @@
+# Programmed By Ujjwal Humagain
+# Date of Completion 11 February 2021
+# Copyright (c) 2021 Ujjwal Humagain
 from gpiozero import LED # initalizing GPIO pins 
 green = LED(14) #setting green LED in pin 14
 orange = LED(15) #setting orange LED in pin 15

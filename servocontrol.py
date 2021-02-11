@@ -1,3 +1,6 @@
+# Programmed By Ujjwal Humagain
+# Date of Completion 11 February 2021
+# Copyright (c) 2021 Ujjwal Humagain
 #Importing necessary packages
 import RPi.GPIO as GPIO
 from time import sleep

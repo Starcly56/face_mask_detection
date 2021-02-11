@@ -1,3 +1,6 @@
+# Programmed By Ujjwal Humagain
+# Date of Completion 11 February 2021
+# Copyright (c) 2021 Ujjwal Humagain
 # importing the required packages
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications import MobileNetV2

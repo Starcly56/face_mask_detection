@@ -1,3 +1,6 @@
+# Programmed By Ujjwal Humagain
+# Date of Completion 11 February 2021
+# Copyright (c) 2021 Ujjwal Humagain
 import cv2
 from picamera import PiCamera
 from picamera.array import PiRGBArray
