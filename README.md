@@ -45,7 +45,7 @@ Similarly, in order to detect the mask and open the door <br>
 "python3 detect_mask_and_open_door.py" should be run in the command prompt.
 
 During the model training, the loss and accuray was plotted in the line graph using Matplotlib and Sklearn and the graph was developed as;
-![Getting Started](./plot1k.png) while using 2000 images for training and 
+![Getting Started](./plot1K.png) while using 2000 images for training and 
 Similarly, ![Getting Started](./plot-20.png) when trained with 40 images.
 
 Demonstration of the system working is shown as;<br>
